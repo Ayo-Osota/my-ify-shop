@@ -3,13 +3,13 @@
 }
 
 .search__button {
-  right: var(--inputs-border-width);
-  top: var(--inputs-border-width);
+  right: calc(var(--inputs-border-width) + 10px);
+  top: calc(var(--inputs-border-width) + 0.75rem);
 }
 
 .reset__button {
-  right: calc(var(--inputs-border-width) + 4.4rem);
-  top: var(--inputs-border-width);
+  right: calc(var(--inputs-border-width) + 4.4rem + 60px);
+  top: calc(var(--inputs-border-width ) + 0.75rem);
 }
 
 .reset__button:not(:focus-visible)::after {

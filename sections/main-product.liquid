@@ -12,6 +12,30 @@
   {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
+  <style>
+    .product__title * {
+    color: #16194F;
+    }
+
+    .product__description h3 {
+    color: #000000;
+    }
+
+    .quantity {
+      background: #F2F6FF;
+      border-radius: 0;
+    }
+
+    .quantity__button {
+    background: none;
+    }
+
+    .quantity::before,
+    .quantity::after {
+      display: none;
+    }
+  </style>
+
   {%- style -%}
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -165,6 +189,7 @@
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  <h3>Description</h3>
                   {{ product.description }}
                 </div>
               {%- endif -%}

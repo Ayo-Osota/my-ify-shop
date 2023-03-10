@@ -5,6 +5,92 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
+<style>
+   {% comment %} cart-remove-button {
+   display: none;
+   }
+
+   cart-items:hover cart-remove-button {
+   display: flex;
+   } {% endcomment %}
+
+   .cart-quantity {
+  background-color: #F2F6FF;
+  }
+
+   .cart__warnings * {
+     color: #16194f;
+   }
+
+   .cart__warnings a {
+     text-decoration: none;
+   }
+
+   .cart-item__media {
+     display: flex;
+     flex-direction: row;
+     gap: 2rem;
+   }
+
+   .cart-item__image-container {
+     width: 172px;
+     height: 147px;
+   }
+
+   .cart-item__media > * {
+    flex-shrink: 0;
+  }
+
+   @media screen and (max-width: 750px) {
+     .cart-item__media {
+       gap: 0px;
+       border: solid red;
+       width: fit-content !important;
+     }
+
+     .cart-item__media svg {
+     width: 20px;
+     }
+
+     .cart-item__image-container {
+       width: 72px;
+       height: 47px;
+     }
+
+     .cart-items td, .cart-items th {
+       padding: 1rem;
+  }
+
+  .cart__warnings img {
+    width: 90%;
+  }
+   }
+
+   @media screen and (min-width: 750px) {
+     .cart-item__details {
+        width: 0rem;
+   }
+   }
+
+   @media screen and (min-width: 990px) {
+     .cart-item__details {
+        width: 15rem;
+   }
+   }
+
+   .cart-item__media svg {
+    z-index: 100;
+    }
+
+    .cart-item__link {
+      z-index: 99;
+      }
+
+      .cart-item__image-container {
+      z-index: -1;
+      }
+</style>
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -30,9 +116,10 @@
   </div>
 
   <div class="cart__warnings">
-    <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-    <a href="{{ routes.all_products_collection_url }}" class="button">
-      {{ 'general.continue_shopping' | t }}
+    {{ 'empty-cart.png' | asset_url | img_tag: 'Cart empty' }}
+    <h1 class="cart__empty-text">Your cart is Currently Empty</h1>
+    <a href="{{ routes.all_products_collection_url }}">
+      Go and add items to your cart, I will be here waiting for you
     </a>
 
     {%- if shop.customer_accounts_enabled and customer == null -%}
@@ -72,6 +159,18 @@
               {%- for item in cart.items -%}
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
+                    <cart-remove-button
+                      id="Remove-{{ item.index | plus: 1 }}"
+                      data-index="{{ item.index | plus: 1 }}"
+                    >
+                      <a
+                        href="{{ item.url_to_remove }}"
+                        class="button button--tertiary"
+                        aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
+                      >
+                        {% render 'icon-remove' %}
+                      </a>
+                    </cart-remove-button>
                     {% if item.image %}
                       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
                       <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
@@ -254,19 +353,6 @@
                           {% render 'icon-plus' %}
                         </button>
                       </quantity-input>
-
-                      <cart-remove-button
-                        id="Remove-{{ item.index | plus: 1 }}"
-                        data-index="{{ item.index | plus: 1 }}"
-                      >
-                        <a
-                          href="{{ item.url_to_remove }}"
-                          class="button button--tertiary"
-                          aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
-                        >
-                          {% render 'icon-remove' %}
-                        </a>
-                      </cart-remove-button>
                     </div>
                     <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
                       <small class="cart-item__error-text"></small>

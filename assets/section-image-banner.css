@@ -1,7 +1,6 @@
 .banner {
-  display: flex;
+  display: grid;
   position: relative;
-  flex-direction: column;
 }
 
 .banner__box {

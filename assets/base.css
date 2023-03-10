@@ -1,3 +1,7 @@
+:root {
+  --page-width: 1230px;
+}
+
 /* Color custom properties */
 
 :root,
@@ -246,7 +250,7 @@ html.no-js .no-js-hidden {
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 0.5rem;
 }
 
 .page-width-desktop {
@@ -442,7 +446,7 @@ h5,
 
 h1,
 .h1 {
-  font-size: calc(var(--font-heading-scale) * 3rem);
+  font-size: 3.75rem;
 }
 
 @media only screen and (min-width: 750px) {
@@ -1219,7 +1223,7 @@ summary::-webkit-details-marker {
 /* component-media */
 .media {
   display: block;
-  background-color: rgba(var(--color-foreground), 0.1);
+  /* background-color: rgba(var(--color-foreground), 0.1); */
   position: relative;
   overflow: hidden;
 }
@@ -2187,7 +2191,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
 .cart-count-bubble {
   position: absolute;
-  background-color: rgb(var(--color-button));
+  background-color: #16194F;
   color: rgb(var(--color-button-text));
   height: 1.7rem;
   width: 1.7rem;
@@ -2296,7 +2300,7 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
   .header--middle-left {
     grid-template-areas: 'heading navigation icons';
-    grid-template-columns: auto auto 1fr;
+    grid-template-columns: 1fr auto 1fr;
     column-gap: 2rem;
   }
 
@@ -2668,6 +2672,7 @@ details[open] > .header__submenu {
   padding: 1.2rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
+  font-size: 1em;
 }
 
 .header__menu-item:hover {
@@ -2991,5 +2996,17 @@ details-disclosure > details {
 
   .localization-form__select:focus {
     outline: transparent solid 1px;
+  }
+}
+
+
+.shopify-payment-button__button--unbranded {
+  background-color: #ffffff !important;
+  color: #16194F !important;
+}
+
+@media screen and (min-width: 990px) {
+  .product--stacked .product__media-item:not(.is-active) {
+    max-width: calc(33% - var(--grid-desktop-horizontal-spacing) / 2) !important;
   }
 }

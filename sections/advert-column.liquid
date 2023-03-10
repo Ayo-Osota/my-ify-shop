@@ -1,0 +1,86 @@
+{{ 'advert-column.css' | asset_url | stylesheet_tag }}
+
+<div class="advert-section page-width">
+  {%- for block in section.blocks -%}
+    <div class="advert-item">
+      {% if block.settings.advert_type == 'free-shipping' %}
+        {{ 'delivery.png' | asset_url | img_tag: 'Delivery' }}
+      {% elsif block.settings.advert_type == 'support' %}
+        {{ 'customer-care.png' | asset_url | img_tag: 'Customer care' }}
+      {% elsif block.settings.advert_type == 'secured-payment' %}
+        {{ 'payment.png' | asset_url | img_tag: 'Payment' }}
+      {% endif %}
+      <article>
+        <h3>
+          {% if block.settings.advert_type == 'free-shipping' %}
+            Free shipping
+          {% elsif block.settings.advert_type == 'support' %}
+            Support 24/7
+          {% elsif block.settings.advert_type == 'secured-payment' %}
+            Payment 100% secure
+          {% endif %}
+        </h3>
+        <p>
+          {% if block.settings.advert_type == 'free-shipping' %}
+            Free shipping on all UK Orders
+          {% elsif block.settings.advert_type == 'support' %}
+            We suppourt 24/77 everyday
+          {% elsif block.settings.advert_type == 'secured-payment' %}
+            Payment is 100% safe
+          {% endif %}
+        </p>
+      </article>
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Advert",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "advert",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "select",
+          "id": "advert_type",
+          "options": [
+            {
+              "value": "free-shipping",
+              "label": "Free shipping"
+            },
+            {
+              "value": "support",
+              "label": "Customer care"
+            },
+            {
+              "value": "secured-payment",
+              "label": "Secured payment"
+            }
+          ],
+          "default": "free-shipping",
+          "label": "Choose advert to be displayed"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-banner.presets.name",
+      "blocks": [
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,28 +1,28 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero_section": {
+      "type": "hero-section",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "Discover the perfect pair of shoes for any occasion",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "text": "Find the perfect pair of shoes for any occasion with our collection of trendy sneakers, sandals, loafers, and boots. Our shoes are designed with comfort and style in mind, so you can look and feel your best no matter where your day takes you. Explore our collection and step into style today",
+            "text_style": "subtitle"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -35,177 +35,188 @@
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
+        "image": "shopify:\/\/shop_images\/hero-image_d5a31f41-0523-462a-bf4d-e263ad626cf7.png",
         "image_height": "large",
-        "adapt_height_first_image": false,
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left"
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "advert_column": {
+      "type": "advert-column",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "9b22e819-14cb-4459-a6cf-c5f3bce0ceaf": {
+          "type": "column",
           "settings": {
-            "heading": "<p>Talk about your brand</p>",
-            "heading_size": "h1"
+            "advert_type": "free-shipping"
           }
         },
-        "text": {
-          "type": "text",
+        "1c0186f9-1123-471b-9fb3-4a25d93c1e9f": {
+          "type": "column",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "advert_type": "support"
+          }
+        },
+        "b899618e-dd76-4559-a2bf-396b64570e0b": {
+          "type": "column",
+          "settings": {
+            "advert_type": "secured-payment"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "9b22e819-14cb-4459-a6cf-c5f3bce0ceaf",
+        "1c0186f9-1123-471b-9fb3-4a25d93c1e9f",
+        "b899618e-dd76-4559-a2bf-396b64570e0b"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+      }
+    },
+    "search_collection": {
+      "type": "main-search",
+      "settings": {
+        "columns_desktop": 4,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "article_show_date": true,
+        "article_show_author": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "Top Category",
         "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "collection": "all",
         "products_to_show": 8,
         "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
         "color_scheme": "background-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
         "image_ratio": "adapt",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
+        "enable_quick_add": false,
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 28,
         "padding_bottom": 36
       }
     },
-    "collage": {
-      "type": "collage",
+    "bb82043c-876a-4dc3-ac1a-ba934495ff15": {
+      "type": "image-with-text",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "template--18067611386154__bb82043c-876a-4dc3-ac1a-ba934495ff15-1676725822831f6a30-0": {
+          "type": "heading",
           "settings": {
-            "collection": ""
+            "heading": "Buy More, Save More with Our Exclusive Shoe Sale",
+            "heading_size": "h1"
           }
         },
-        "product": {
-          "type": "product",
+        "template--18067611386154__bb82043c-876a-4dc3-ac1a-ba934495ff15-1676725822831f6a30-1": {
+          "type": "text",
           "settings": {
-            "product": "",
-            "second_image": false
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_style": "body"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "template--18067611386154__bb82043c-876a-4dc3-ac1a-ba934495ff15-1676725822831f6a30-2": {
+          "type": "button",
           "settings": {
-            "collection": ""
+            "button_label": "Claim Your Free Pair Now!",
+            "button_link": "shopify:\/\/collections\/sale"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "template--18067611386154__bb82043c-876a-4dc3-ac1a-ba934495ff15-1676725822831f6a30-0",
+        "template--18067611386154__bb82043c-876a-4dc3-ac1a-ba934495ff15-1676725822831f6a30-1",
+        "template--18067611386154__bb82043c-876a-4dc3-ac1a-ba934495ff15-1676725822831f6a30-2"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "background-1",
+        "image": "shopify:\/\/shop_images\/BATA_WAHALA_47d3a064-9ce9-4885-a632-ab7e653fcf6c.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-2",
+        "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    "faq": {
+      "type": "FAQ",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "38fdb9a4-6d56-4729-8550-ef54f9b47db4": {
+          "type": "faq",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "question": "How do I place an order on your site?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad<\/p>"
           }
         },
-        "column2": {
-          "type": "column",
+        "f6a0a35d-61fd-42bd-b61c-1f511865815c": {
+          "type": "faq",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "question": "What payment methods do you accept?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad<\/p>"
           }
         },
-        "column3": {
-          "type": "column",
+        "4f281a8c-47fa-4248-906f-7bb6528cfd1a": {
+          "type": "faq",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "question": "How much does shipping cost?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad<\/p>"
+          }
+        },
+        "c6587cae-2dd6-4de4-87b2-ac1158e1a5f3": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you offer international shipping?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad<\/p>"
+          }
+        },
+        "7cebfe70-1380-45bc-b933-03ab36c7d1eb": {
+          "type": "faq",
+          "settings": {
+            "question": "At this time, we only offer shipping within the United States.",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad<\/p>"
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "38fdb9a4-6d56-4729-8550-ef54f9b47db4",
+        "f6a0a35d-61fd-42bd-b61c-1f511865815c",
+        "4f281a8c-47fa-4248-906f-7bb6528cfd1a",
+        "c6587cae-2dd6-4de4-87b2-ac1158e1a5f3",
+        "7cebfe70-1380-45bc-b933-03ab36c7d1eb"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
+    "hero_section",
+    "advert_column",
+    "search_collection",
     "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "bb82043c-876a-4dc3-ac1a-ba934495ff15",
+    "faq"
   ]
 }

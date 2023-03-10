@@ -14,31 +14,52 @@
 <script src="{{ 'main-search.js' | asset_url }}" defer="defer"></script>
 
 <style>
-  .template-search__header {
-    margin-bottom: 3rem;
-  }
-
   .template-search__search {
     margin: 0 auto 3.5rem;
-    max-width: 74.1rem;
+    max-width: 1235px;
   }
 
   .template-search__search .search {
     margin-top: 3rem;
+    padding: 12px;
+  }
+
+  .field {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 0.75rem
+  }
+
+  .field__input:focus-visible,
+  .field__input:focus {
+  box-shadow: none;
+  outline: none;
+  padding: 1em;
+  }
+
+  .field__input::placeholder {
+  opacity: 1;
+  }
+
+  .field .search__input:hover,
+  .field .search__input:focus {
+  outline: none;
+  }
+
+  .field::before,
+  .field::after {
+    display: none;
   }
 
   .template-search--empty {
     padding-bottom: 18rem;
   }
 
-  @media screen and (min-width: 750px) {
-    .template-search__header {
-      margin-bottom: 5rem;
-    }
-  }
-
-  .search__button .icon {
-    height: 1.8rem;
+  .search__button {
+    padding: 1.0938em 45.5px;
+    border-radius: 20px;
+    border: 1px solid #16194F;
   }
 </style>
 
@@ -62,15 +83,8 @@
   }
 {%- endstyle -%}
 
-<div class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">
+<div class="template-search {% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %} section-{{ section.id }}-padding">
   <div class="template-search__header page-width">
-    <h1 class="h2 center">
-      {%- if search.performed -%}
-        {{- 'templates.search.title' | t -}}
-      {%- else -%}
-        {{- 'general.search.search' | t -}}
-      {%- endif -%}
-    </h1>
     <div class="template-search__search">
       {%- if settings.predictive_search_enabled -%}
         <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
@@ -84,7 +98,7 @@
                   type="search"
                   name="q"
                   value="{{ search.terms | escape }}"
-                  placeholder="{{ 'general.search.search' | t }}"
+                  placeholder="Search for product"
                   {%- if settings.predictive_search_enabled -%}
                     role="combobox"
                     aria-expanded="false"
@@ -98,7 +112,7 @@
                     spellcheck="false"
                   {%- endif -%}
                 >
-                <label class="field__label" for="Search-In-Template">{{ 'general.search.search' | t }}</label>
+                
                 <input name="options[prefix]" type="hidden" value="last">
 
                 {%- if settings.predictive_search_enabled -%}
@@ -119,9 +133,7 @@
                   </svg>
                 </button>
                 <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-                  <svg class="icon icon-search" aria-hidden="true" focusable="false">
-                    <use xlink:href="#icon-search">
-                  </svg>
+                  Search
                 </button>
               </div>
             </form>
@@ -187,7 +199,7 @@
         </form>
       </facet-filters-form>
     {%- endif -%}
-    <div{% if section.settings.filter_type == 'vertical' %} class="facets-vertical page-width"{% endif %}>
+    <div {% if section.settings.filter_type == 'vertical' %} class="facets-vertical page-width"{% endif %}>
       {%- if search.filters != empty -%}
         {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
           <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}" id="main-search-filters" data-id="{{ section.id }}">
@@ -428,6 +440,9 @@
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
     }
-  ]
+  ],
+  "presets": [
+		{ "name": "Search Block" }
+	]
 }
 {% endschema %}
