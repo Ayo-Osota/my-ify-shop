@@ -35,7 +35,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/hero-image_d5a31f41-0523-462a-bf4d-e263ad626cf7.png",
+        "image": "shopify:\/\/shop_images\/hero-image.png",
         "image_height": "large",
         "desktop_content_position": "middle-left",
         "desktop_content_alignment": "left",
@@ -148,7 +148,7 @@
         "template--18067611386154__bb82043c-876a-4dc3-ac1a-ba934495ff15-1676725822831f6a30-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/BATA_WAHALA_47d3a064-9ce9-4885-a632-ab7e653fcf6c.png",
+        "image": "shopify:\/\/shop_images\/BATA_WAHALA_1.png",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
